@@ -1,35 +1,45 @@
-import React from 'react';
 import { motion } from "framer-motion";
-import { MessageSquare, PenTool, Code2, Rocket, Headphones } from "lucide-react";
+import { Search, Code2, HeartHandshake } from "lucide-react";
+
+const DesignIcon = ({ className }) => (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M8 1.49965C8 0.923175 7.66948 0.397743 7.14978 0.148025C6.63008 -0.101694 6.01322 -0.0314912 5.56296 0.328641C2.94132 2.42543 1.51658 4.2628 0.76682 5.86193C0.00067997 7.49594 0 8.76147 0 9.49769C0 11.3883 0.95436 13.056 2.4077 14.0456C2.02534 14.3661 1.68656 14.7613 1.3955 15.2323C0.44398 16.7719 0 19.1243 0 22.5043C0 25.9277 0.45994 30.0386 1.20918 33.3206C1.58172 34.9526 2.04314 36.4581 2.59456 37.5896C2.86804 38.1507 3.20104 38.6987 3.61566 39.1274C4.02572 39.5511 4.6593 40 5.5 40C6.3407 40 6.97428 39.5511 7.38434 39.1274C7.79896 38.6987 8.13196 38.1507 8.40544 37.5896C8.95686 36.4581 9.41828 34.9526 9.79082 33.3206C10.5401 30.0386 11 25.9277 11 22.5043C11 19.1243 10.556 16.7719 9.6045 15.2323C9.31344 14.7613 8.97466 14.3661 8.5923 14.0456C10.0456 13.056 11 11.3883 11 9.49769C11 7.64493 10.1282 6.35003 9.46312 5.36219L9.40626 5.27767C8.62422 4.11425 8 3.15893 8 1.49965ZM3 9.49769V9.49518C3 8.89882 3 8.16548 3.48318 7.13491C3.821 6.41443 4.42106 5.49863 5.50762 4.39404C5.89346 5.42931 6.4341 6.23341 6.89184 6.91423L6.91628 6.9506C7.63036 8.0129 8 8.61983 8 9.49769C8 10.8781 6.88072 11.9971 5.5 11.9971C4.11928 11.9971 3 10.8781 3 9.49769ZM3 22.5043C3 19.2583 3.45144 17.6117 3.94766 16.8089C4.17346 16.4434 4.39762 16.2704 4.5979 16.1732C4.81356 16.0687 5.09864 16.0059 5.5 16.0059C5.90136 16.0059 6.18644 16.0687 6.4021 16.1732C6.60238 16.2704 6.82654 16.4434 7.05234 16.8089C7.54856 17.6117 8 19.2583 8 22.5043C8 25.7067 7.56452 29.5938 6.86604 32.6532C6.51472 34.1922 6.11422 35.4433 5.70852 36.2759C5.63384 36.4291 5.56388 36.5578 5.5 36.6648C5.43612 36.5578 5.36616 36.4291 5.29148 36.2759C4.88578 35.4433 4.48528 34.1922 4.13396 32.6532C3.43548 29.5938 3 25.7067 3 22.5043ZM12.9686 24.1483C13.9116 24.564 14.931 24.8383 16 24.9445V20.495C16 16.9061 18.9102 13.9966 22.5 13.9966H26.9506C26.449 8.94449 22.1854 4.99878 17 4.99878C15.2857 4.99878 13.6722 5.43003 12.262 6.18994C11.9017 5.40198 11.4794 4.77551 11.1656 4.31001L11.0662 4.16238C10.9335 3.96491 10.8146 3.78611 10.7088 3.62007C12.573 2.58745 14.7178 1.99951 17 1.99951C23.8432 1.99951 29.4514 7.28578 29.9622 13.9966H33.5C37.0898 13.9966 40 16.9061 40 20.495V31.4923C40 35.0812 37.0898 37.9907 33.5 37.9907H22.5C18.9102 37.9907 16 35.0812 16 31.4923V27.9554C14.873 27.8696 13.7861 27.6402 12.7577 27.2853C12.8593 26.2258 12.9307 25.1698 12.9686 24.1483ZM33.5 16.9958H29.8472C28.9858 22.5727 24.5782 26.9792 19 27.8404V31.4923C19 33.4248 20.567 34.9914 22.5 34.9914H33.5C35.433 34.9914 37 33.4248 37 31.4923V20.495C37 18.5625 35.433 16.9958 33.5 16.9958ZM19 24.7939C22.9182 23.9987 26.0046 20.9131 26.8 16.9958H22.5C20.567 16.9958 19 18.5625 19 20.495V24.7939Z" fill="#5A57FF"/>
+    </svg>
+);
+
+const LaunchIcon = ({ className }) => (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M21.2765 13.2981C22.7767 11.7978 25.2092 11.7978 26.7093 13.2981C28.2097 14.7983 28.2097 17.2307 26.7093 18.7311C25.2092 20.2312 22.7767 20.2312 21.2765 18.7311C19.7762 17.2307 19.7762 14.7983 21.2765 13.2981ZM24.9417 15.0658C24.4177 14.5419 23.5682 14.5419 23.0442 15.0658C22.5202 15.5898 22.5202 16.4393 23.0442 16.9632C23.5682 17.4872 24.4177 17.4872 24.9417 16.9632C25.4655 16.4393 25.4655 15.5898 24.9417 15.0658Z" fill="#5A57FF"/>
+        <path d="M34.3693 6.73852C34.3035 6.16024 33.8471 5.70392 33.269 5.63797C27.0918 4.93354 20.6578 6.95055 15.917 11.6913C14.8029 12.8054 13.839 14.0134 13.0254 15.2899C10.2968 15.3976 7.59993 16.493 5.51674 18.5761C4.67486 19.4181 3.99299 20.3621 3.47271 21.3694C3.25238 21.7959 3.29586 22.3111 3.58458 22.6948C3.87331 23.0783 4.35626 23.2628 4.82716 23.1691C6.80154 22.7763 8.86741 22.9709 10.7466 23.7518L16.2496 29.2548C17.0308 31.1346 17.2251 33.2013 16.832 35.1764C16.7381 35.6473 16.9223 36.1303 17.306 36.4191C17.6895 36.7079 18.2046 36.7514 18.6313 36.5313C19.6393 36.0108 20.5841 35.3286 21.4266 34.4861C23.509 32.4038 24.6043 29.7083 24.7128 26.9808C25.9908 26.1666 27.2001 25.2018 28.3155 24.0866C33.0553 19.3468 35.0725 12.9145 34.3693 6.73852ZM22.0131 28.4349C21.665 30.0046 20.8801 31.4971 19.6588 32.7183C19.6146 32.7626 19.57 32.8063 19.525 32.8494C19.4965 31.7256 19.3195 30.6046 18.9943 29.5184C20.021 29.2361 21.0305 28.8749 22.0131 28.4349ZM10.4863 21.0081C9.39993 20.6824 8.27871 20.5053 7.15469 20.4764C7.19739 20.4319 7.24068 20.3878 7.28451 20.3439C8.50648 19.1219 9.99994 18.3369 11.5707 17.9889C11.1304 18.9718 10.7689 19.9814 10.4863 21.0081ZM17.6848 13.4591C21.6058 9.53812 26.8381 7.72917 31.9728 8.03412C32.2768 13.1677 30.4678 18.3986 26.5476 22.3188C24.0376 24.8288 20.9928 26.4716 17.7808 27.2504L12.7538 22.2234C13.5328 19.0123 15.1755 15.9684 17.6848 13.4591Z" fill="#5A57FF"/>
+        <path d="M5.04999 33.7501C5.05001 33.7502 5.05001 33.7504 6.29919 33.7051L5.04999 33.7501C5.07372 34.4049 5.59909 34.9306 6.25389 34.9542L6.29919 33.7051C6.25389 34.9542 6.25369 34.9542 6.25389 34.9542L6.25599 34.9544L6.25939 34.9546L6.27002 34.9549L6.30609 34.9559C6.33654 34.9567 6.37959 34.9577 6.43377 34.9586C6.54202 34.9602 6.69522 34.9612 6.88129 34.9592C7.25146 34.9552 7.76116 34.9386 8.31047 34.8872C8.85367 34.8366 9.47032 34.7487 10.0419 34.5916C10.5771 34.4444 11.2454 34.1919 11.7321 33.7051C13.2324 32.2049 13.2324 29.7724 11.7321 28.2722C10.2319 26.7719 7.79946 26.7719 6.29919 28.2722C5.81242 28.7589 5.55989 29.4272 5.41271 29.9624C5.25556 30.5341 5.16777 31.1506 5.11701 31.6939C5.06567 32.2432 5.04907 32.7529 5.04504 33.1231C5.04301 33.3091 5.04412 33.4622 5.04581 33.5706C5.04664 33.6247 5.04762 33.6677 5.04842 33.6982L5.04947 33.7342L5.04981 33.7449L5.04999 33.7501ZM8.06696 30.0399C8.59091 29.5161 9.44041 29.5161 9.96436 30.0399C10.4883 30.5639 10.4883 31.4134 9.96436 31.9374C9.96451 31.9372 9.96461 31.9371 9.96436 31.9374C9.96099 31.9402 9.92216 31.9742 9.81919 32.0239C9.71179 32.0757 9.56571 32.1297 9.37907 32.1811C9.00277 32.2846 8.54542 32.3544 8.07786 32.3982C7.90306 32.4146 7.73164 32.4267 7.56849 32.4359C7.57759 32.2727 7.58982 32.1012 7.60616 31.9264C7.64986 31.4589 7.71979 31.0016 7.82324 30.6252C7.87457 30.4386 7.92861 30.2926 7.98041 30.1851C8.03007 30.0821 8.06401 30.0432 8.06696 30.0399C8.06717 30.0397 8.06711 30.0397 8.06696 30.0399Z" fill="#5A57FF"/>
+    </svg>
+);
 
 const steps = [
     {
-        number: "01",
-        icon: MessageSquare,
+        icon: Search,
         title: "Discovery",
         description: "Understanding your business, goals, and challenges."
     },
     {
-        number: "02",
-        icon: PenTool,
+        icon: DesignIcon,
         title: "Design",
-        description: "Creating wireframes and prototypes aligned with your vision."
+        description: "Creating wireframes and prototypes aligned with your vision.",
+        isCustom: true
     },
     {
-        number: "03",
         icon: Code2,
         title: "Development",
         description: "Building your software with regular progress updates."
     },
     {
-        number: "04",
-        icon: Rocket,
+        icon: LaunchIcon,
         title: "Launch",
-        description: "Testing and deployment to ensure everything works perfectly."
+        description: "Testing and deployment to ensure everything works perfectly.",
+        isCustom: true
     },
     {
-        number: "05",
-        icon: Headphones,
+        icon: HeartHandshake,
         title: "Support",
         description: "Ongoing maintenance and updates for peak performance."
     }
@@ -37,59 +47,66 @@ const steps = [
 
 export default function ProcessSection() {
     return (
-        <section className="py-32 bg-gradient-to-b from-white to-slate-50 relative">
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="process" className="py-20 md:py-28 bg-[#F4F2FF]">
+            <div className="max-w-[1440px] mx-auto px-[139px]">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-20"
+                    className="text-center mb-16"
                 >
-                    <span className="text-sm font-medium text-blue-600 tracking-widest uppercase mb-4 block">
-                        How We Work
+                    <span className="font-bold text-[20px] leading-[24px] text-[#5A57FF] mb-3 block">
+                        OUR PROCESS
                     </span>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-                        Our Process
+                    <h2 className="font-extrabold text-[48px] leading-[58px] text-[#0F172A] mb-4">
+                        How We{' '}
+                        <span className="text-[#5A57FF]">Work</span>
                     </h2>
-                    <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+                    <p className="text-[16px] leading-[19px] text-[#818181] max-w-[521px] mx-auto">
                         A proven methodology for delivering projects on time and on budget.
                     </p>
                 </motion.div>
 
-                <div className="relative">
-                    {/* Connection line */}
-                    <div className="absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-slate-200 to-transparent hidden lg:block" />
-                    
-                    <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
-                        {steps.map((step, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="relative text-center group"
-                            >
-                                {/* Step circle */}
-                                <div className="relative mx-auto mb-6">
-                                    <div className="w-20 h-20 mx-auto rounded-2xl bg-white border-2 border-slate-200 flex items-center justify-center group-hover:border-blue-500 group-hover:shadow-xl group-hover:shadow-blue-500/10 transition-all duration-300 relative z-10">
-                                        <step.icon className="w-8 h-8 text-slate-600 group-hover:text-blue-600 transition-colors" />
-                                    </div>
-                                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-slate-900 text-white text-xs font-bold flex items-center justify-center">
-                                        {step.number}
-                                    </div>
+                {/* Process Steps */}
+                <div className="flex items-start justify-between relative">
+                    {steps.map((step, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="text-center relative"
+                            style={{ width: '208px' }}
+                        >
+                            {/* Circle with icon */}
+                            <div className="relative flex justify-center mb-4">
+                                <div className="w-[98px] h-[98px] rounded-full bg-white border border-[#C2C0FF] flex items-center justify-center group-hover:border-[#5A57FF] transition-colors">
+                                    {step.isCustom ? (
+                                        <step.icon className="w-[40px] h-[40px]" />
+                                    ) : (
+                                        <step.icon className="w-[40px] h-[40px] text-[#5A57FF]" strokeWidth={1.5} />
+                                    )}
                                 </div>
 
-                                <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                                    {step.title}
-                                </h3>
-                                <p className="text-sm text-slate-500 leading-relaxed">
-                                    {step.description}
-                                </p>
-                            </motion.div>
-                        ))}
-                    </div>
+                                {/* Connecting line */}
+                                {index < steps.length - 1 && (
+                                    <div
+                                        className="absolute top-1/2 -translate-y-1/2 hidden lg:block"
+                                        style={{ left: 'calc(50% + 49px)', width: '132px', height: '1px', backgroundColor: '#C2C0FF' }}
+                                    />
+                                )}
+                            </div>
+
+                            <h3 className="font-semibold text-[20px] leading-[24px] text-black mb-2">
+                                {step.title}
+                            </h3>
+                            <p className="text-[14px] leading-[17px] text-[#818181]">
+                                {step.description}
+                            </p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
