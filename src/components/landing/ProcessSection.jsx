@@ -77,12 +77,12 @@ export default function ProcessSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="text-center relative"
+                            className="text-center relative group cursor-pointer"
                             style={{ width: '208px' }}
                         >
                             {/* Circle with icon */}
                             <div className="relative flex justify-center mb-4">
-                                <div className="w-[98px] h-[98px] rounded-full bg-white border border-[#C2C0FF] flex items-center justify-center hover:border-[#5A57FF] hover:shadow-[0_0_10px_10px_rgba(90,87,255,0.42)] transition-all duration-300 cursor-pointer">
+                                <div className="w-[98px] h-[98px] rounded-full bg-white border border-[#C2C0FF] flex items-center justify-center group-hover:border-[#5A57FF] group-hover:scale-110 group-hover:-translate-y-1 group-hover:shadow-lg transition-all duration-300">
                                     {step.isCustom ? (
                                         <step.icon className="w-[40px] h-[40px]" />
                                     ) : (
