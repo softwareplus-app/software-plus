@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import mobileDevImg from '../../assets/mobile-dev.png';
+import securityImg from '../../assets/security.png';
 
 function PlayIcon() {
     return (
@@ -93,7 +95,7 @@ export default function AboutSection() {
                     >
                         {/* Top-left: 263x263 */}
                         <div className="absolute" style={{ left: 0, top: 0, width: '263px', height: '263px' }}>
-                            <img src="/mobile-dev.png" alt="Mobile development" className="w-full h-full" />
+                            <img src={mobileDevImg} alt="Mobile development" className="w-full h-full" />
                         </div>
                         {/* Top-right: 349x233, offset 30px down */}
                         <div className="absolute" style={{ left: '283px', top: '30px', width: '349px', height: '233px' }}>
@@ -101,7 +103,7 @@ export default function AboutSection() {
                         </div>
                         {/* Bottom-left: 376x247 */}
                         <div className="absolute" style={{ left: '2px', top: '285px', width: '376px', height: '247px' }}>
-                            <img src="/security.png" alt="Security" className="w-full h-full" />
+                            <img src={securityImg} alt="Security" className="w-full h-full" />
                         </div>
                         {/* Bottom-right: 260x260 */}
                         <div className="absolute" style={{ left: '400px', top: '285px', width: '260px', height: '260px' }}>
