@@ -82,7 +82,7 @@ export default function ProcessSection() {
                         >
                             {/* Circle with icon */}
                             <div className="relative flex justify-center mb-4">
-                                <div className="w-[98px] h-[98px] rounded-full bg-white border border-[#C2C0FF] flex items-center justify-center group-hover:border-[#5A57FF] transition-colors">
+                                <div className="w-[98px] h-[98px] rounded-full bg-white border border-[#C2C0FF] flex items-center justify-center hover:border-[#5A57FF] hover:shadow-[0_0_10px_10px_rgba(90,87,255,0.42)] transition-all duration-300 cursor-pointer">
                                     {step.isCustom ? (
                                         <step.icon className="w-[40px] h-[40px]" />
                                     ) : (
