@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import mobileDevImg from '../../assets/mobile-dev.png';
-import securityImg from '../../assets/security.png';
+import mobileDevImg from '../../assets/mobile-dev.jpg';
+import securityImg from '../../assets/security.jpg';
 
 function PlayIcon() {
     return (
