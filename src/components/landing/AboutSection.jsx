@@ -25,10 +25,10 @@ const features = [
 ];
 
 const images = [
-    { src: "/about-1.png", alt: "Mobile development" },
-    { src: "/about-2.png", alt: "Global reach" },
-    { src: "/about-3.png", alt: "Security" },
-    { src: "/about-4.png", alt: "System architecture" }
+    { src: "/mobile-dev.png", alt: "Mobile development" },
+    { src: "/global-reach.png", alt: "Global reach" },
+    { src: "/security.png", alt: "Security" },
+    { src: "/system-arch.png", alt: "System architecture" }
 ];
 
 function ImagePlaceholder({ alt, className }) {
@@ -93,19 +93,19 @@ export default function AboutSection() {
                     >
                         {/* Top-left: 263x263 */}
                         <div className="absolute" style={{ left: 0, top: 0, width: '263px', height: '263px' }}>
-                            <img src="/about-1.png" alt="Mobile development" className="w-full h-full" />
+                            <img src="/mobile-dev.png" alt="Mobile development" className="w-full h-full" />
                         </div>
                         {/* Top-right: 349x233, offset 30px down */}
                         <div className="absolute" style={{ left: '283px', top: '30px', width: '349px', height: '233px' }}>
-                            <img src="/about-2.png" alt="Global reach" className="w-full h-full" />
+                            <img src="/global-reach.png" alt="Global reach" className="w-full h-full" />
                         </div>
                         {/* Bottom-left: 376x247 */}
                         <div className="absolute" style={{ left: '2px', top: '285px', width: '376px', height: '247px' }}>
-                            <img src="/about-3.png" alt="Security" className="w-full h-full" />
+                            <img src="/security.png" alt="Security" className="w-full h-full" />
                         </div>
                         {/* Bottom-right: 260x260 */}
                         <div className="absolute" style={{ left: '400px', top: '285px', width: '260px', height: '260px' }}>
-                            <img src="/about-4.png" alt="System architecture" className="w-full h-full" />
+                            <img src="/system-arch.png" alt="System architecture" className="w-full h-full" />
                         </div>
                     </motion.div>
                 </div>
