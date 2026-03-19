@@ -94,16 +94,16 @@ export default function AboutSection() {
                         style={{ width: '660px', height: '545px' }}
                     >
                         {/* Top-left: 263x263 */}
-                        <div className="absolute" style={{ left: 0, top: 0, width: '263px', height: '263px' }}>
-                            <img src={mobileDevImg} alt="Mobile development" className="w-full h-full" />
+                        <div className="absolute rounded-[20px] overflow-hidden" style={{ left: 0, top: 0, width: '263px', height: '263px' }}>
+                            <img src={mobileDevImg} alt="Mobile development" className="w-full h-full object-cover" />
                         </div>
                         {/* Top-right: 349x233, offset 30px down */}
                         <div className="absolute" style={{ left: '283px', top: '30px', width: '349px', height: '233px' }}>
                             <img src="/global-reach.png" alt="Global reach" className="w-full h-full" />
                         </div>
                         {/* Bottom-left: 376x247 */}
-                        <div className="absolute" style={{ left: '2px', top: '285px', width: '376px', height: '247px' }}>
-                            <img src={securityImg} alt="Security" className="w-full h-full" />
+                        <div className="absolute rounded-[20px] overflow-hidden" style={{ left: '2px', top: '285px', width: '376px', height: '247px' }}>
+                            <img src={securityImg} alt="Security" className="w-full h-full object-cover" />
                         </div>
                         {/* Bottom-right: 260x260 */}
                         <div className="absolute" style={{ left: '400px', top: '285px', width: '260px', height: '260px' }}>
