@@ -124,7 +124,7 @@ export default function ContactSection() {
                                         </label>
                                         <input
                                             type="text"
-                                            placeholder="John Smith"
+                                            placeholder="Your company name"
                                             value={formData.company}
                                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                                             className="w-full h-[60px] bg-white border border-[#C2C0FF] rounded-[20px] px-[25px] text-[16px] leading-[19px] text-[#0F172A] placeholder-[#8F8F8F] focus:border-[#5A57FF] focus:outline-none transition-colors"
