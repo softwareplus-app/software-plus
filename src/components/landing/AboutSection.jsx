@@ -94,8 +94,8 @@ export default function AboutSection() {
                         style={{ width: '660px', height: '545px' }}
                     >
                         {/* Top-left: 263x263 */}
-                        <div className="absolute" style={{ left: 0, top: 0, width: '263px', height: '263px' }}>
-                            <img src={mobileDevImg} alt="Mobile development" className="w-full h-full" />
+                        <div className="absolute rounded-[20px] overflow-hidden" style={{ left: 0, top: 0, width: '263px', height: '263px' }}>
+                            <img src={mobileDevImg} alt="Mobile development" className="w-full h-full object-cover" />
                         </div>
                         {/* Top-right: 349x233, offset 30px down */}
                         <div className="absolute" style={{ left: '283px', top: '30px', width: '349px', height: '233px' }}>
